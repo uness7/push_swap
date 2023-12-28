@@ -11,7 +11,7 @@ void    pa(t_stack *a, t_stack *b)
     new->next = a->peak;
     a->peak = new;
     pop(b);
-    printf("pa\n");
+    write(1, "pa\n", 3);
 }
 
 void    pb(t_stack *a, t_stack *b)
@@ -25,7 +25,7 @@ void    pb(t_stack *a, t_stack *b)
     new->next = b->peak;
     b->peak = new;
     pop(a);
-    printf("pb\n");
+    write(1, "pb\n", 3);
 }
 
 void sa(t_stack *stack)
@@ -39,7 +39,7 @@ void sa(t_stack *stack)
     temp->next = stack->peak->next;     // Update the `next` of the original top node
     temp->index = stack->peak->index;
     stack->peak->next = temp;           // Set the original top as the second node
-    printf("sa\n");
+    write(1, "sa\n", 3);
 }
 
 void sb(t_stack *stack)
@@ -53,7 +53,7 @@ void sb(t_stack *stack)
     temp->index = stack->peak->index;
     temp->next = stack->peak->next;
     stack->peak->next = temp;
-    printf("sb\n");
+    write(1, "sb\n", 3);
 }
 
 void    ra(t_stack *stack)
@@ -71,5 +71,5 @@ void    ra(t_stack *stack)
     while (temp->next != NULL)
         temp = temp->next;
     temp->next = to_rotate; // set it to be the peak element previously destroyed
-    printf("ra\n");
+    write(1, "ra\n", 3);
 }

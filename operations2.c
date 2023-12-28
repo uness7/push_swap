@@ -15,7 +15,7 @@ void    rb(t_stack *stack)
     while (temp->next != NULL)
         temp = temp->next;
     temp->next = to_rotate; // set it to be the peak element previously destroyed
-    printf("rb\n");
+    write(1, "rb\n", 3);
 }
 
 void    rra(t_stack *a)
@@ -35,7 +35,7 @@ void    rra(t_stack *a)
     last->next = a->peak;
     a->peak = last;
     second_last->next = NULL;
-    printf("rra\n");
+    write(1, "rra\n", 4);
 }
 
 void    rrb(t_stack *a)
@@ -55,5 +55,5 @@ void    rrb(t_stack *a)
     last->next = a->peak;
     a->peak = last;
     second_last->next = NULL;
-    printf("rrb\n");
+    write(1, "rrb\n", 4);
 }
