@@ -16,21 +16,29 @@ int	main(int ac, char **av)
 {
 	t_stack	a;
 	t_stack	b;
-	int		arr[ac - 1];
+	int		*arr;
 	int		size;
 	t_obj	obj;
 
 	if (ac > 1)
 	{
+		size = ac - 1;
+		arr = malloc(sizeof(int) * size);
+		if (!arr)
+		{
+			print_error();
+			free(arr);
+			return (0);
+		}
 		if (!is_input_valid(ac, av) || !is_input_valid_helper(ac, av))
 			exit(EXIT_FAILURE);
 		fill_arr(arr, ac, av);
 		if (has_array_dup(arr, ac - 1))
 			exit(EXIT_FAILURE);
-		size = (sizeof arr / sizeof arr[0]);
 		init_stack(&a);
 		init_stack(&b);
 		fill_stack(&a, arr, size);
+		free(arr);
 		sort(&a, &b, ac - 1, obj);
 		free_stack(&a);
 		free_stack(&b);

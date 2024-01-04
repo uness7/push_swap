@@ -16,7 +16,7 @@ t_node	*create_node(int data)
 	return (new);
 }
 
-void	fill_arr(int arr[], int ac, char **av)
+void	fill_arr(int *arr, int ac, char **av)
 {
 	int		i;
 	int		j;
@@ -43,7 +43,7 @@ void	display_stack(t_stack *stack)
 	printf("\n");
 }
 
-void	fill_stack(t_stack *stack, int arr[], int size)
+void	fill_stack(t_stack *stack, int *arr, int size)
 {
 	t_node	*new;
 	int		i;

@@ -36,7 +36,7 @@ int	is_stack_sorted(t_stack *stack)
 	return (1);
 }
 
-int	has_array_dup(int arr[], int size)
+int	has_array_dup(int *arr, int size)
 {
 	int		i;
 	int		j;
