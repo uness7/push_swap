@@ -19,7 +19,7 @@ void	sort_500_nodes(t_stack *a, t_stack *b, int ac, t_obj obj)
 				ra(a);
 			if ((obj.n == 40 && obj.y >= 120) || (obj.n == 80 && obj.y >= 80)
 				|| (obj.n == 120 && obj.y >= 40))
-			obj.y -= 40;
+				obj.y -= 40;
 		}
 		obj.b += 40;
 		obj.max += 40;
