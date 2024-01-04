@@ -1,34 +1,33 @@
 #include "push_swap.h"
 
-static int  findPosition(t_stack *a, int data)
+static int	find_position(t_stack *a, int data)
 {
-    t_node	*temp;
-    int		i;
-    int		count;
+	t_node	*temp;
+	int		i;
+	int		count;
 
-    i = 0;
-    count = 0;
-    temp = a->peak;
-    while (temp)
-    {
-        if (temp->index == data)
-            count += i;
-	i++;
-        temp = temp->next;
-    }
-    return (count);
+	i = 0;
+	count = 0;
+	temp = a->peak;
+	while (temp)
+	{
+		if (temp->index == data)
+			count += i;
+		i++;
+		temp = temp->next;
+	}
+	return (count);
 }
 
-void    sortHelper(t_stack *a, t_stack *b, int min, int max)
+void	sort_helper(t_stack *a, t_stack *b, int min, int max)
 {
-	int	i;
-	int	pos;
+	int		i;
+	int		pos;
 
-//	printf("entering helper generalkjA\n");
 	while (max > min || max == 0)
 	{
 		i = 0;
-		pos = (findPosition(b, max) < (stackSize(b) / 2));
+		pos = (find_position(b, max) < (stack_size(b) / 2));
 		while (pos && i < 1)
 		{
 			if (b->peak->index == max && ++i)

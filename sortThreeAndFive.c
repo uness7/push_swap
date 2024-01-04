@@ -1,13 +1,12 @@
 #include "push_swap.h"
 
-void    sortThreeNodes(t_stack *a)
+void	sort_three_nodes(t_stack *a)
 {
 	t_node	*last;
 
-//	printf("Entering sortThreeNodes\n");
-	while (!isStackSorted(a))
+	while (!is_stack_sorted(a))
 	{
-		last = lastNode(a);
+		last = last_node(a);
 		if (a->peak->data > last->data)
 			ra(a);
 		else if (a->peak->data > a->peak->next->data)
@@ -17,26 +16,22 @@ void    sortThreeNodes(t_stack *a)
 	}
 }
 
-void    sortFiveNodes(t_stack *a, t_stack *b)
+void	sort_five_nodes(t_stack *a, t_stack *b)
 {
 	int		x;
 	t_node	*last;
 
 	x = 0;
-//	printf("Entering sortFiveNodes\n");
-	while (!isStackSorted(a) || x != 0)
+	while (!is_stack_sorted(a) || x != 0)
 	{
-		last = lastNode(a);
+		last = last_node(a);
 		if ((a->peak->data > last->data) && (a->peak->next->data > last->data))
-		{
-			printf("xxx\n");
 			rra(a);
-		}
 		else if (a->peak->data > last->data)
 			ra(a);
 		else if (a->peak->data > a->peak->next->data)
 			sa(a);
-		else if (isStackSorted(a) && x != 0)
+		else if (is_stack_sorted(a) && x != 0)
 		{
 			pa(a, b);
 			x--;

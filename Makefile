@@ -8,6 +8,7 @@ CFILES = push_swap.c \
 		 push_swap_utils2.c \
 		 push_swap_utils3.c \
 		 push_swap_utils4.c \
+		 push_swap_utils5.c \
 		 operations.c \
 		 operations2.c \
 		 operations3.c \
